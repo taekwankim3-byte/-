@@ -4,188 +4,1955 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Army Girls Club • Purple Dream World</title>
+
 <style>
-:root{--bg:#13091f;--bg2:#29113c;--card:#ffffff12;--line:#ffffff24;--pink:#ff9edb;--purple:#b96cff;--lav:#ead2ff;--gold:#ffd778;--text:#fffaff}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(circle at 15% 10%,#642b80,transparent 28%),radial-gradient(circle at 85% 25%,#7b376f,transparent 25%),linear-gradient(135deg,var(--bg),var(--bg2));overflow-x:hidden}
-a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button{cursor:pointer}
-nav{position:sticky;top:0;z-index:100;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:11px;background:#100719dd;backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-nav a{font-size:13px;padding:8px 12px;border-radius:99px;background:#ffffff0d;border:1px solid var(--line)}
-.hero{min-height:92vh;display:grid;place-items:center;text-align:center;padding:55px 18px;position:relative}
-.logo{width:155px;height:155px;border-radius:50%;display:grid;place-items:center;margin:auto;font-size:43px;background:radial-gradient(circle at 30% 20%,#fff,#d7a2ff 20%,#803da8 58%,#2b0c40);box-shadow:0 0 45px #bc6cffaa,inset -20px -20px 30px #190725;animation:float 4s ease-in-out infinite}
-@keyframes float{50%{transform:translateY(-12px)}}h1{font-size:clamp(42px,9vw,82px);margin:16px 0 8px;background:linear-gradient(90deg,#fff,#e6b9ff,#ffd2eb);-webkit-background-clip:text;color:transparent}
-.hero p{font-size:18px;color:var(--lav)}.btn{border:0;padding:13px 18px;border-radius:999px;color:white;font-weight:800;background:linear-gradient(90deg,#873bc1,#d457aa);box-shadow:0 8px 25px #8d43b44d}.ghost{background:#ffffff10;border:1px solid var(--line)}
-section{max-width:1120px;margin:auto;padding:72px 18px}.title{text-align:center;margin-bottom:32px}.title h2{font-size:clamp(28px,6vw,48px);margin:0 0 8px}.title p{color:var(--lav)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}.card{padding:22px;border:1px solid var(--line);border-radius:28px;background:var(--card);backdrop-filter:blur(14px);box-shadow:0 20px 55px #0003}.card h3{margin-top:0}
-.petal{position:fixed;top:-40px;z-index:90;pointer-events:none;animation:fall linear forwards}@keyframes fall{to{transform:translateY(110vh) rotate(600deg);opacity:.15}}
-.guide{position:fixed;right:16px;bottom:16px;width:min(360px,calc(100vw - 32px));z-index:95;display:none;padding:18px;border-radius:24px;background:#21102ddd;border:1px solid #ffffff2b;box-shadow:0 20px 55px #0008;backdrop-filter:blur(15px)}
-.guide.show{display:block;animation:pop .3s ease}@keyframes pop{from{transform:translateY(20px);opacity:0}to{transform:none;opacity:1}}
-.guideAvatar{float:left;width:78px;height:78px;border-radius:50%;display:grid;place-items:center;font-size:35px;margin-right:12px;background:linear-gradient(145deg,#f6c6ff,#793b9e);box-shadow:0 8px 25px #0007}.x{float:right;background:none;color:white;font-size:22px;border:0}
-input,select,textarea{width:100%;padding:13px 15px;border-radius:16px;border:1px solid var(--line);background:#100819;color:#fff;outline:0}label{display:block;margin:12px 0 6px;font-weight:800}
-.welcome{display:none;text-align:center;margin-top:22px;padding:28px;border-radius:28px;color:#41134f;background:linear-gradient(145deg,#ffe2f5,#d7b0ff);box-shadow:0 20px 55px #0004}.welcome h3{font-size:34px;margin:10px}
-.creator{display:grid;grid-template-columns:1fr 1fr;gap:20px}.stage{min-height:360px;display:grid;place-items:center;border-radius:25px;background:radial-gradient(circle,#914da8,#2c113c 62%,#12071c);overflow:hidden}
-.person{width:180px;height:260px;position:relative;filter:drop-shadow(0 20px 20px #0008)}.hair{position:absolute;top:18px;left:32px;width:116px;height:112px;border-radius:60px 60px 38px 38px;background:#261c2b;z-index:4}.head{position:absolute;top:35px;left:48px;width:84px;height:100px;border-radius:45%;background:#dcb5a4;z-index:3}.body{position:absolute;bottom:8px;left:36px;width:108px;height:145px;border-radius:48px 48px 25px 25px;background:#9b58ca}.eyes{position:absolute;top:77px;left:65px;z-index:6;letter-spacing:13px}.crown{position:absolute;top:-7px;left:55px;z-index:8;font-size:30px;display:none}.badge{position:absolute;right:2px;bottom:65px;font-size:34px;z-index:10}
-.room{min-height:260px;position:relative;overflow:hidden}.room:before{content:"";position:absolute;inset:0;opacity:.4;background-image:radial-gradient(circle,#fff 1px,transparent 2px);background-size:70px 70px}.roomContent{position:relative;z-index:2}.swan{background:linear-gradient(135deg,#050509,#484848)}.spring{background:linear-gradient(135deg,#4b174f,#d45d9f)}.dyna{background:linear-gradient(135deg,#6e1731,#f18b3d)}.moon{background:linear-gradient(135deg,#091633,#4b2875)}
-.chat{height:250px;overflow:auto;padding:12px;border-radius:18px;background:#0e0715;margin:12px 0}.msg{padding:9px 12px;background:#ffffff0d;border-radius:15px;margin:7px 0}
-.timeline{border-left:2px solid #c578ff;padding-left:20px}.event{position:relative;margin:0 0 22px}.event:before{content:"";position:absolute;left:-27px;top:6px;width:11px;height:11px;border-radius:50%;background:#ff9edb;box-shadow:0 0 14px #ff9edb}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}.memory{height:160px;border-radius:22px;display:grid;place-items:center;text-align:center;background:linear-gradient(135deg,#6b3487,#d263a4);border:1px solid var(--line)}
-footer{text-align:center;padding:50px 18px;color:#d9c7e4}
-@media(max-width:720px){.creator{grid-template-columns:1fr}}
+:root{
+  --bg:#100619;
+  --bg2:#271039;
+  --card:#ffffff12;
+  --line:#ffffff25;
+  --pink:#ff9edb;
+  --purple:#b96cff;
+  --lav:#ead2ff;
+  --gold:#ffd778;
+  --text:#fffaff;
+}
+
+*{box-sizing:border-box}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  color:var(--text);
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:
+    radial-gradient(circle at 15% 10%,#71358c,transparent 28%),
+    radial-gradient(circle at 85% 25%,#783b78,transparent 25%),
+    linear-gradient(135deg,var(--bg),var(--bg2));
+  overflow-x:hidden;
+}
+
+body.light{
+  --bg:#f6e9ff;
+  --bg2:#e7c9ff;
+  --card:#ffffff75;
+  --line:#5c237633;
+  --text:#32133f;
+  --lav:#592b68;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button,input,select,textarea{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+/* TOP NAV */
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  gap:7px;
+  justify-content:center;
+  flex-wrap:wrap;
+  padding:10px;
+  background:#100719e8;
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+
+nav a{
+  font-size:13px;
+  padding:9px 13px;
+  border-radius:999px;
+  background:#ffffff0d;
+  border:1px solid var(--line);
+  transition:.25s;
+}
+
+nav a:hover{
+  transform:translateY(-2px);
+  background:#b96cff30;
+}
+
+.menuBtn{
+  display:none;
+}
+
+/* HERO */
+
+.hero{
+  min-height:92vh;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:55px 18px;
+  position:relative;
+  overflow:hidden;
+}
+
+.stars{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    radial-gradient(circle,#ffffff 1px,transparent 1.5px),
+    radial-gradient(circle,#ffd5fa 1px,transparent 1.5px);
+  background-size:95px 95px,145px 145px;
+  animation:starsMove 18s linear infinite;
+  opacity:.35;
+}
+
+@keyframes starsMove{
+  to{background-position:95px 95px,145px 145px}
+}
+
+.logo{
+  width:165px;
+  height:165px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  margin:auto;
+  font-size:55px;
+  background:
+    radial-gradient(circle at 30% 20%,#fff,#d7a2ff 20%,#803da8 58%,#2b0c40);
+  box-shadow:
+    0 0 45px #bc6cffaa,
+    inset -20px -20px 30px #190725;
+  animation:float 4s ease-in-out infinite;
+  position:relative;
+  z-index:2;
+}
+
+@keyframes float{
+  50%{transform:translateY(-13px)}
+}
+
+.heroContent{
+  position:relative;
+  z-index:2;
+}
+
+.smallBrand{
+  margin-top:20px;
+  font-weight:800;
+  letter-spacing:1px;
+}
+
+h1{
+  font-size:clamp(42px,9vw,82px);
+  margin:16px 0 8px;
+  background:linear-gradient(90deg,#fff,#e6b9ff,#ffd2eb);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  font-size:18px;
+  color:var(--lav);
+  max-width:650px;
+  margin:12px auto 25px;
+}
+
+.btn{
+  border:0;
+  padding:13px 18px;
+  border-radius:999px;
+  color:white;
+  font-weight:800;
+  background:linear-gradient(90deg,#873bc1,#d457aa);
+  box-shadow:0 8px 25px #8d43b44d;
+  transition:.25s;
+}
+
+.btn:hover{
+  transform:translateY(-3px) scale(1.02);
+}
+
+.ghost{
+  background:#ffffff10;
+  border:1px solid var(--line);
+}
+
+/* SECTIONS */
+
+section{
+  max-width:1120px;
+  margin:auto;
+  padding:75px 18px;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:32px;
+}
+
+.title h2{
+  font-size:clamp(28px,6vw,48px);
+  margin:0 0 8px;
+}
+
+.title p{
+  color:var(--lav);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:18px;
+}
+
+.card{
+  padding:22px;
+  border:1px solid var(--line);
+  border-radius:28px;
+  background:var(--card);
+  backdrop-filter:blur(14px);
+  box-shadow:0 20px 55px #0003;
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 25px 65px #0005;
+}
+
+.card h3{
+  margin-top:0;
+}
+
+.badgePill{
+  display:inline-block;
+  padding:7px 12px;
+  border-radius:999px;
+  background:#b96cff25;
+  border:1px solid var(--line);
+  font-size:13px;
+}
+
+/* GUIDE */
+
+.guide{
+  position:fixed;
+  right:16px;
+  bottom:16px;
+  width:min(390px,calc(100vw - 32px));
+  z-index:1500;
+  display:none;
+  padding:18px;
+  border-radius:26px;
+  background:#21102ded;
+  border:1px solid #ffffff30;
+  box-shadow:0 20px 55px #0009;
+  backdrop-filter:blur(18px);
+}
+
+.guide.show{
+  display:block;
+  animation:pop .3s ease;
+}
+
+@keyframes pop{
+  from{transform:translateY(20px);opacity:0}
+  to{transform:none;opacity:1}
+}
+
+.guideAvatar{
+  float:left;
+  width:78px;
+  height:78px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:35px;
+  margin-right:12px;
+  background:linear-gradient(145deg,#f6c6ff,#793b9e);
+}
+
+.x{
+  float:right;
+  background:none;
+  color:white;
+  font-size:24px;
+  border:0;
+}
+
+/* INPUT */
+
+input,select,textarea{
+  width:100%;
+  padding:13px 15px;
+  border-radius:16px;
+  border:1px solid var(--line);
+  background:#100819;
+  color:#fff;
+  outline:0;
+}
+
+body.light input,
+body.light select,
+body.light textarea{
+  background:#ffffffaa;
+  color:#32133f;
+}
+
+label{
+  display:block;
+  margin:12px 0 6px;
+  font-weight:800;
+}
+
+/* WELCOME */
+
+.welcome{
+  display:none;
+  text-align:center;
+  margin-top:22px;
+  padding:32px 20px;
+  border-radius:30px;
+  color:#41134f;
+  background:linear-gradient(145deg,#ffe2f5,#d7b0ff);
+  box-shadow:0 20px 55px #0004;
+  animation:cardIn .5s ease;
+}
+
+@keyframes cardIn{
+  from{opacity:0;transform:scale(.94)}
+  to{opacity:1;transform:scale(1)}
+}
+
+.welcome h3{
+  font-size:36px;
+  margin:10px;
+}
+
+/* CHARACTER */
+
+.creator{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.stage{
+  min-height:390px;
+  display:grid;
+  place-items:center;
+  border-radius:25px;
+  background:
+    radial-gradient(circle at 50% 30%,#a95bc0,#3a164b 60%,#12071c);
+  overflow:hidden;
+  position:relative;
+}
+
+.stage::before{
+  content:"✦  ✧  ✦  ✧  ✦";
+  position:absolute;
+  top:25px;
+  left:0;
+  width:100%;
+  text-align:center;
+  font-size:25px;
+  opacity:.5;
+}
+
+.person{
+  width:190px;
+  height:285px;
+  position:relative;
+  filter:drop-shadow(0 20px 20px #0008);
+  animation:personFloat 3s ease-in-out infinite;
+}
+
+@keyframes personFloat{
+  50%{transform:translateY(-8px)}
+}
+
+.hair{
+  position:absolute;
+  top:18px;
+  left:32px;
+  width:126px;
+  height:118px;
+  border-radius:60px 60px 38px 38px;
+  background:#261c2b;
+  z-index:4;
+  transition:.3s;
+}
+
+.head{
+  position:absolute;
+  top:38px;
+  left:52px;
+  width:86px;
+  height:104px;
+  border-radius:45%;
+  background:#dcb5a4;
+  z-index:3;
+}
+
+.body{
+  position:absolute;
+  bottom:8px;
+  left:38px;
+  width:114px;
+  height:150px;
+  border-radius:48px 48px 25px 25px;
+  background:#9b58ca;
+  z-index:2;
+  transition:.3s;
+}
+
+.eyes{
+  position:absolute;
+  top:80px;
+  left:69px;
+  z-index:6;
+  letter-spacing:14px;
+  font-weight:900;
+}
+
+.crown{
+  position:absolute;
+  top:-12px;
+  left:57px;
+  z-index:8;
+  font-size:32px;
+  display:none;
+}
+
+.badge{
+  position:absolute;
+  right:0;
+  bottom:70px;
+  font-size:34px;
+  z-index:10;
+}
+
+.charResult{
+  text-align:center;
+  padding:12px;
+}
+
+.saveStatus{
+  text-align:center;
+  color:var(--gold);
+  font-size:13px;
+}
+
+/* SONG WORLDS */
+
+.room{
+  min-height:270px;
+  position:relative;
+  overflow:hidden;
+  cursor:pointer;
+}
+
+.room::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  opacity:.45;
+  background-image:
+    radial-gradient(circle,#fff 1px,transparent 2px);
+  background-size:70px 70px;
+}
+
+.roomContent{
+  position:relative;
+  z-index:2;
+}
+
+.swan{
+  background:linear-gradient(135deg,#050509,#484848);
+}
+
+.spring{
+  background:linear-gradient(135deg,#4b174f,#d45d9f);
+}
+
+.dyna{
+  background:linear-gradient(135deg,#6e1731,#f18b3d);
+}
+
+.moon{
+  background:linear-gradient(135deg,#091633,#4b2875);
+}
+
+/* CHAT */
+
+.chat{
+  height:250px;
+  overflow:auto;
+  padding:12px;
+  border-radius:18px;
+  background:#0e0715;
+  margin:12px 0;
+}
+
+.msg{
+  padding:9px 12px;
+  background:#ffffff0d;
+  border-radius:15px;
+  margin:7px 0;
+}
+
+/* TIMELINE */
+
+.timeline{
+  border-left:2px solid #c578ff;
+  padding-left:20px;
+}
+
+.event{
+  position:relative;
+  margin:0 0 25px;
+}
+
+.event::before{
+  content:"";
+  position:absolute;
+  left:-27px;
+  top:6px;
+  width:11px;
+  height:11px;
+  border-radius:50%;
+  background:#ff9edb;
+  box-shadow:0 0 14px #ff9edb;
+}
+
+/* GALLERY */
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+  gap:12px;
+}
+
+.memory{
+  min-height:160px;
+  border-radius:22px;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  background:linear-gradient(135deg,#6b3487,#d263a4);
+  border:1px solid var(--line);
+  transition:.3s;
+}
+
+.memory:hover{
+  transform:scale(1.03) rotate(-1deg);
+}
+
+/* MODAL */
+
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:2000;
+  display:none;
+  place-items:center;
+  padding:20px;
+  background:#0009;
+  backdrop-filter:blur(8px);
+}
+
+.modal.show{
+  display:grid;
+}
+
+.modalBox{
+  width:min(600px,100%);
+  max-height:85vh;
+  overflow:auto;
+  padding:28px;
+  border-radius:30px;
+  background:linear-gradient(145deg,#29113c,#12071c);
+  border:1px solid #ffffff25;
+  box-shadow:0 30px 100px #000;
+  animation:cardIn .3s ease;
+}
+
+.modalClose{
+  float:right;
+  border:0;
+  background:none;
+  color:white;
+  font-size:25px;
+}
+
+/* PETALS */
+
+.petal{
+  position:fixed;
+  top:-40px;
+  z-index:1900;
+  pointer-events:none;
+  animation:fall linear forwards;
+}
+
+@keyframes fall{
+  to{
+    transform:translateY(110vh) rotate(600deg);
+    opacity:.15;
+  }
+}
+
+/* FLOAT BUTTONS */
+
+.tools{
+  position:fixed;
+  left:15px;
+  bottom:15px;
+  z-index:1200;
+  display:flex;
+  gap:8px;
+}
+
+.toolBtn{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  border:1px solid var(--line);
+  background:#21102ddd;
+  color:white;
+  font-size:19px;
+}
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  padding:55px 18px;
+  color:#d9c7e4;
+}
+
+/* MOBILE */
+
+@media(max-width:720px){
+
+  nav{
+    display:none;
+    flex-direction:column;
+    align-items:stretch;
+    padding:10px 14px;
+  }
+
+  nav.open{
+    display:flex;
+  }
+
+  nav a{
+    text-align:center;
+  }
+
+  .menuBtn{
+    display:block;
+    position:sticky;
+    top:0;
+    z-index:1100;
+    width:100%;
+    border:0;
+    padding:13px;
+    color:white;
+    background:#100719ee;
+    font-weight:900;
+    border-bottom:1px solid var(--line);
+  }
+
+  .creator{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    min-height:86vh;
+  }
+
+  .logo{
+    width:135px;
+    height:135px;
+  }
+
+  section{
+    padding:60px 15px;
+  }
+}
 </style>
 </head>
+
 <body>
 
-<nav>
-<a href="#home">🏠 Home</a><a href="#welcome">🌷 Welcome</a><a href="#character">🧚 Character</a><a href="#songs">🎵 Song Worlds</a>
-<a href="#places">🌏 Places</a><a href="#events">🎂 Calendar</a><a href="#community">🫶 Community</a>
+<!-- MOBILE MENU -->
+
+<button class="menuBtn" onclick="toggleMenu()">☰ 💜 Army Girls Club Menu</button>
+
+<nav id="nav">
+<a href="#home" onclick="closeMenu()">🏠 Home</a>
+<a href="#welcome" onclick="closeMenu()">🌷 Welcome</a>
+<a href="#character" onclick="closeMenu()">🧚 Character</a>
+<a href="#songs" onclick="closeMenu()">🎵 Song Worlds</a>
+<a href="#places" onclick="closeMenu()">🌏 Places</a>
+<a href="#events" onclick="closeMenu()">🎂 Calendar</a>
+<a href="#community" onclick="closeMenu()">🫶 Community</a>
 </nav>
 
+
+<!-- GUIDE -->
+
 <div id="guide" class="guide">
+
 <button class="x" onclick="hideGuide()">×</button>
+
 <div class="guideAvatar">💜</div>
+
 <b>হাই Army Girl! 🌷</b>
-<p>আমি তোমার Purple Guide! এই জগতে নিজের ARMY character বানাতে পারবে, bias নির্বাচন করতে পারবে, dreamy song-world explore করতে পারবে, memory garden দেখতে পারবে আর অন্য Army-দের সঙ্গে কথা বলার community corner-এ যেতে পারবে। ✨</p>
-<p><b>একটা secret tip:</b> সব section ঘুরে দেখো—কিছু surprise button আছে! 🫶</p>
+
+<p>
+আমি তোমার Purple Guide! ✨
+এই Purple Dream World-এ তুমি নিজের ARMY character বানাতে,
+Welcome Card তৈরি করতে, Song Worlds explore করতে
+এবং Community Corner-এ message রাখতে পারবে।
+</p>
+
+<p>
+💡 <b>Secret:</b> পুরো website ঘুরে দেখো।
+কিছু জায়গায় surprise আছে! 🫶
+</p>
+
 </div>
+
+
+<!-- HERO -->
 
 <header class="hero" id="home">
-<div>
+
+<div class="stars"></div>
+
+<div class="heroContent">
+
 <div class="logo">💜</div>
-<div style="margin-top:18px">✿ 𝐀𝐫𝐦𝐲 𝐆𝐢𝐫𝐥𝐬 𝐂𝐥𝐮𝐛 ✿</div>
-<h1>Purple Dream World</h1>
-<p>একটা website নয়—একটা ছোট্ট স্বপ্নের ARMY universe. 🌙💜</p>
-<button class="btn" onclick="showGuide()">✨ আমার Guide-কে দেখাও</button>
-<a class="btn ghost" href="#welcome" style="display:inline-block;margin:8px">🌸 Enter the World</a>
+
+<div class="smallBrand">
+✿ 𝐀𝐫𝐦𝐲 𝐆𝐢𝐫𝐥𝐬 𝐂𝐥𝐮𝐛 ✿
 </div>
+
+<h1>Purple Dream World</h1>
+
+<p>
+একটা website নয়—
+একটা ছোট্ট স্বপ্নের ARMY universe. 🌙💜
+</p>
+
+<button class="btn" onclick="showGuide()">
+✨ Meet Your Purple Guide
+</button>
+
+<a class="btn ghost" href="#welcome" style="display:inline-block;margin:8px">
+🌸 Enter The World
+</a>
+
+</div>
+
 </header>
 
+
+<!-- WELCOME -->
+
 <section id="welcome">
-<div class="title"><h2>🌸 ফুলে ফুলে স্বাগতম 🌸</h2><p>তোমার নাম লিখে নিজের Welcome Card বানাও।</p></div>
+
+<div class="title">
+
+<h2>🌸 ফুলে ফুলে স্বাগতম 🌸</h2>
+
+<p>
+তোমার নাম লিখে নিজের personalized Welcome Card বানাও।
+</p>
+
+</div>
+
 <div class="card">
-<label>তোমার নাম</label><input id="visitorName" maxlength="30" placeholder="যেমন: Khushbu">
-<button class="btn" style="margin-top:14px" onclick="welcomeMe()">🌷 আমাকে Welcome করো 🌷</button>
+
+<label>তোমার নাম</label>
+
+<input
+id="visitorName"
+maxlength="30"
+placeholder="যেমন: Khushbu">
+
+<button class="btn" style="margin-top:14px" onclick="welcomeMe()">
+🌷 আমাকে Welcome করো 🌷
+</button>
+
+
 <div id="welcomeCard" class="welcome">
-<div style="font-size:42px">🌸💐🌷🌺</div>
+
+<div style="font-size:42px">
+🌸 💐 🌷 🌺
+</div>
+
 <h3 id="welcomeTitle"></h3>
+
 <p>Assalamu Alaikum! 💜</p>
-<p>তুমি এখন Army Girls Club-এর Purple Dream World-এর special guest. ✨</p>
-<div style="font-size:30px">🌷 ✿ 💜 ✿ 🌸</div>
+
+<p>
+তুমি এখন Army Girls Club-এর
+Purple Dream World-এর special guest. ✨
+</p>
+
+<p>
+আজকের তোমার ARMY mood:
+<b id="welcomeMood">💜 Purple Dreamer</b>
+</p>
+
+<div style="font-size:30px">
+🌷 ✿ 💜 ✿ 🌸
 </div>
+
 </div>
+
+</div>
+
 </section>
+
+
+<!-- CHARACTER -->
 
 <section id="character">
-<div class="title"><h2>🧚 Create Your ARMY Character</h2><p>নিজের character-এর নাম, bias, style আর crown বেছে নাও।</p></div>
+
+<div class="title">
+
+<h2>🧚 ARMY Character Studio</h2>
+
+<p>
+নিজের ARMY character তৈরি করো এবং এই device-এ save করে রাখো।
+</p>
+
+</div>
+
+
 <div class="creator">
+
 <div class="card">
-<label>Character name</label><input id="charName" placeholder="তোমার ARMY name">
-<label>তোমার bias</label><select id="bias">
-<option>OT7 💜</option><option>RM</option><option>Jin</option><option>SUGA</option><option>j-hope</option><option>Jimin</option><option>V</option><option>Jung Kook</option><option>2 biases</option><option>3 biases</option><option>4 biases</option><option>5 biases</option><option>6 biases</option>
+
+<span class="badgePill">
+✨ Character Creator
+</span>
+
+<label>Character name</label>
+
+<input
+id="charName"
+maxlength="25"
+placeholder="তোমার ARMY name">
+
+
+<label>তোমার Bias</label>
+
+<select id="bias">
+
+<option>OT7 💜</option>
+<option>RM</option>
+<option>Jin</option>
+<option>SUGA</option>
+<option>j-hope</option>
+<option>Jimin</option>
+<option>V</option>
+<option>Jung Kook</option>
+<option>2 biases</option>
+<option>3 biases</option>
+<option>4 biases</option>
+<option>5 biases</option>
+<option>6 biases</option>
+
 </select>
-<label>Character type</label><select id="gender"><option>Girl Army 🌸</option><option>Boy Army 👑</option><option>Prince/Princess ✨</option></select>
-<label>Outfit color</label><select id="outfit"><option value="#9b58ca">Purple</option><option value="#d85aa9">Pink</option><option value="#536ee8">Blue</option><option value="#6dba91">Mint</option><option value="#d4a33b">Gold</option></select>
-<label>Special item</label><select id="item"><option>💜 ARMY Bomb</option><option>🌸 Flower</option><option>👑 Crown</option><option>🎧 Headphones</option><option>✨ Star</option></select>
-<button class="btn" style="margin-top:15px" onclick="createCharacter()">✨ Create Character</button>
+
+
+<label>Character type</label>
+
+<select id="gender">
+
+<option>Girl Army 🌸</option>
+<option>Boy Army 👑</option>
+<option>Prince/Princess ✨</option>
+
+</select>
+
+
+<label>Outfit color</label>
+
+<select id="outfit">
+
+<option value="#9b58ca">Purple 💜</option>
+<option value="#d85aa9">Pink 🌸</option>
+<option value="#536ee8">Blue 💙</option>
+<option value="#6dba91">Mint 🌿</option>
+<option value="#d4a33b">Gold ✨</option>
+
+</select>
+
+
+<label>Special item</label>
+
+<select id="item">
+
+<option>💜 ARMY Bomb</option>
+<option>🌸 Flower</option>
+<option>👑 Crown</option>
+<option>🎧 Headphones</option>
+<option>✨ Star</option>
+
+</select>
+
+
+<label>Hair style</label>
+
+<select id="hairStyle">
+
+<option value="long">Long Hair</option>
+<option value="short">Short Hair</option>
+<option value="curly">Curly Hair</option>
+
+</select>
+
+
+<button class="btn" style="margin-top:15px" onclick="createCharacter()">
+✨ Create My Character
+</button>
+
+<button class="btn ghost" style="margin-top:10px" onclick="loadCharacter()">
+💾 Load Saved Character
+</button>
+
 </div>
+
+
 <div class="card">
+
 <div class="stage">
+
 <div class="person">
-<div class="crown" id="crown">👑</div><div class="hair" id="hair"></div><div class="head"></div><div class="eyes">• •</div><div class="body" id="body"></div><div class="badge" id="badge">💜</div>
+
+<div class="crown" id="crown">👑</div>
+
+<div class="hair" id="hair"></div>
+
+<div class="head"></div>
+
+<div class="eyes">• •</div>
+
+<div class="body" id="body"></div>
+
+<div class="badge" id="badge">💜</div>
+
 </div>
+
 </div>
-<h3 id="characterResult" style="text-align:center">তোমার character তোমার জন্য অপেক্ষা করছে… 💜</h3>
+
+<h3 id="characterResult" class="charResult">
+তোমার character তোমার জন্য অপেক্ষা করছে… 💜
+</h3>
+
+<div id="saveStatus" class="saveStatus">
+Character তৈরি করলে এখানে save status দেখা যাবে।
 </div>
+
 </div>
+
+</div>
+
 </section>
+
+
+<!-- SONG WORLDS -->
 
 <section id="songs">
-<div class="title"><h2>🎵 Step Inside The Song Worlds</h2><p>প্রতিটি room একটি আলাদা musical mood-এর visual interpretation।</p></div>
+
+<div class="title">
+
+<h2>🎵 Step Inside The Song Worlds</h2>
+
+<p>
+প্রতিটি room একটি আলাদা visual dream-world।
+</p>
+
+</div>
+
+
 <div class="grid">
-<div class="card room swan"><div class="roomContent"><div style="font-size:40px">🦢</div><h3>Black Swan • Shadow Stage</h3><p>কালো পালক, mirror floor আর dramatic spotlight-এর dream space.</p><button class="btn" onclick="room('Black Swan')">Enter</button></div></div>
-<div class="card room spring"><div class="roomContent"><div style="font-size:40px">🌸</div><h3>Spring Day • Memory Garden</h3><p>ফুল, soft light আর nostalgic পথের peaceful world.</p><button class="btn" onclick="room('Spring Day')">Enter</button></div></div>
-<div class="card room dyna"><div class="roomContent"><div style="font-size:40px">💥</div><h3>Dynamite • Neon Party</h3><p>Retro signs, bright lights আর dance-floor energy.</p><button class="btn" onclick="room('Dynamite')">Enter</button></div></div>
-<div class="card room moon"><div class="roomContent"><div style="font-size:40px">🌙</div><h3>Moonlight • Purple Night</h3><p>তারাভরা আকাশ আর quiet ARMY corner.</p><button class="btn" onclick="room('Moonlight')">Enter</button></div></div>
+
+
+<div class="card room swan" onclick="openRoom(
+'🦢 Black Swan',
+'Mirror floor, black feathers, dramatic lights আর mysterious atmosphere-এর একটি original visual room.'
+)">
+
+<div class="roomContent">
+
+<div style="font-size:45px">🦢</div>
+
+<h3>Black Swan • Shadow Stage</h3>
+
+<p>
+কালো পালক, mirror floor আর dramatic spotlight-এর dream space.
+</p>
+
+<button class="btn" onclick="event.stopPropagation();openRoom(
+'🦢 Black Swan',
+'Mirror floor, black feathers, dramatic lights আর mysterious atmosphere.'
+)">
+Enter World
+</button>
+
 </div>
+
+</div>
+
+
+<div class="card room spring" onclick="openRoom(
+'🌸 Spring Day',
+'ফুল, soft light আর nostalgic পথের peaceful memory garden.'
+)">
+
+<div class="roomContent">
+
+<div style="font-size:45px">🌸</div>
+
+<h3>Spring Day • Memory Garden</h3>
+
+<p>
+ফুল, soft light আর nostalgic পথের peaceful world.
+</p>
+
+<button class="btn" onclick="event.stopPropagation();openRoom(
+'🌸 Spring Day',
+'ফুল, soft light আর nostalgic পথের peaceful memory garden.'
+)">
+Enter World
+</button>
+
+</div>
+
+</div>
+
+
+<div class="card room dyna" onclick="openRoom(
+'💥 Dynamite',
+'Retro signs, bright lights আর colorful dance-floor inspired atmosphere.'
+)">
+
+<div class="roomContent">
+
+<div style="font-size:45px">💥</div>
+
+<h3>Dynamite • Neon Party</h3>
+
+<p>
+Retro signs, bright lights আর dance-floor energy.
+</p>
+
+<button class="btn" onclick="event.stopPropagation();openRoom(
+'💥 Dynamite',
+'Retro signs, bright lights আর colorful dance-floor inspired atmosphere.'
+)">
+Enter World
+</button>
+
+</div>
+
+</div>
+
+
+<div class="card room moon" onclick="openRoom(
+'🌙 Purple Night',
+'তারাভরা আকাশ, moonlight এবং calm ARMY corner.'
+)">
+
+<div class="roomContent">
+
+<div style="font-size:45px">🌙</div>
+
+<h3>Purple Night • Dream Sky</h3>
+
+<p>
+তারাভরা আকাশ আর quiet ARMY corner.
+</p>
+
+<button class="btn" onclick="event.stopPropagation();openRoom(
+'🌙 Purple Night',
+'তারাভরা আকাশ, moonlight এবং calm ARMY corner.'
+)">
+Enter World
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
 <div class="card" style="margin-top:20px">
-<h3>🎧 Official Music Corner</h3><p>Copyright-safe রাখতে এখানে audio file কপি করে রাখা হয়নি। Official YouTube links ব্যবহার করা হয়েছে।</p>
-<a class="btn ghost" target="_blank" href="https://www.youtube.com/results?search_query=BTS+Black+Swan+official">Black Swan</a>
-<a class="btn ghost" target="_blank" href="https://www.youtube.com/results?search_query=BTS+Spring+Day+official">Spring Day</a>
-<a class="btn ghost" target="_blank" href="https://www.youtube.com/results?search_query=BTS+Dynamite+official">Dynamite</a>
+
+<h3>🎧 Official Music Corner</h3>
+
+<p>
+Music file এখানে copy করে রাখা হয়নি।
+Official YouTube search links ব্যবহার করা হয়েছে।
+</p>
+
+<a class="btn ghost" target="_blank"
+href="https://www.youtube.com/results?search_query=BTS+Black+Swan+official">
+Black Swan
+</a>
+
+<a class="btn ghost" target="_blank"
+href="https://www.youtube.com/results?search_query=BTS+Spring+Day+official">
+Spring Day
+</a>
+
+<a class="btn ghost" target="_blank"
+href="https://www.youtube.com/results?search_query=BTS+Dynamite+official">
+Dynamite
+</a>
+
 </div>
+
 </section>
+
+
+<!-- PLACES -->
 
 <section id="places">
-<div class="title"><h2>🌏 BTS Memory & Travel World</h2><p>Public places, concerts, tours আর community memories-এর জন্য আলাদা space.</p></div>
-<div class="grid">
-<div class="card"><h3>🇰🇷 Seoul Dream Street</h3><p>Seoul-inspired digital street—future-এ তোমাদের photo, notes ও memories যোগ করা যাবে।</p></div>
-<div class="card"><h3>🎤 Concert Universe</h3><p>Concert eras, tour memories আর fan-created art রাখার gallery.</p></div>
-<div class="card"><h3>📸 Memory Gallery</h3><p>Army Girls Club-এর own memories-এর জন্য future photo wall.</p></div>
-<div class="card"><h3>🌌 Star Observatory</h3><p>একটা calm rooftop-style corner যেখানে visitor ছোট message রেখে যেতে পারবে।</p></div>
+
+<div class="title">
+
+<h2>🌏 BTS Memory & Travel World</h2>
+
+<p>
+Future updates-এর জন্য আমাদের digital places.
+</p>
+
 </div>
+
+
+<div class="grid">
+
+<div class="card">
+
+<h3>🇰🇷 Seoul Dream Street</h3>
+
+<p>
+Seoul-inspired digital street।
+Future-এ এখানে verified public places-এর information যোগ করা যাবে।
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>🎤 Concert Universe</h3>
+
+<p>
+Concert eras, tour memories এবং fan-created art-এর জন্য space.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>📸 Memory Gallery</h3>
+
+<p>
+Army Girls Club-এর own memories-এর জন্য future photo wall.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>🌌 Star Observatory</h3>
+
+<p>
+একটা calm rooftop-style corner যেখানে visitor ছোট message রেখে যেতে পারবে।
+</p>
+
+</div>
+
+</div>
+
 </section>
+
+
+<!-- CALENDAR -->
 
 <section id="events">
-<div class="title"><h2>🎂 Purple Calendar</h2><p>Birthday, pet days এবং respectful remembrance moments.</p></div>
-<div class="card timeline">
-<div class="event"><h3>🎂 BTS Birthday Celebrations</h3><p>প্রতিটি সদস্যের birthday-তে আলাদা theme, flowers, lights এবং fan messages.</p></div>
-<div class="event"><h3>🐾 Bam Day</h3><p>Bam-এর জন্য cute pet-themed celebration corner.</p></div>
-<div class="event"><h3>🐾 Yeontan Memory Day</h3><p>Yeontan-এর স্মরণে শান্ত ও respectful memory garden.</p></div>
-<div class="event"><h3>🐾 Moni Day</h3><p>Moni-এর জন্য আলাদা pet celebration corner.</p></div>
-<div class="event"><h3>🕊️ Taehyung's Grandmother • Remembrance Garden</h3><p>ভালোবাসা ও স্মরণের জন্য শান্ত digital garden। তারিখ যোগ করার আগে reliable source দিয়ে verify করা ভালো।</p></div>
+
+<div class="title">
+
+<h2>🎂 Purple Calendar</h2>
+
+<p>
+Birthday, celebration এবং respectful remembrance moments.
+</p>
+
 </div>
+
+
+<div class="card timeline">
+
+<div class="event">
+
+<h3>🎂 BTS Birthday Celebrations</h3>
+
+<p>
+প্রতিটি সদস্যের birthday-তে আলাদা theme ও fan messages.
+</p>
+
+</div>
+
+
+<div class="event">
+
+<h3>🐾 Bam Corner</h3>
+
+<p>
+Bam-এর জন্য cute pet-themed celebration space.
+</p>
+
+</div>
+
+
+<div class="event">
+
+<h3>🐾 Yeontan Memory Garden</h3>
+
+<p>
+Yeontan-এর স্মরণে শান্ত ও respectful memory corner.
+</p>
+
+</div>
+
+
+<div class="event">
+
+<h3>🐾 Moni Corner</h3>
+
+<p>
+Moni-এর জন্য আলাদা pet celebration space.
+</p>
+
+</div>
+
+
+<div class="event">
+
+<h3>🕊️ Remembrance Garden</h3>
+
+<p>
+প্রিয়জনদের স্মরণ করার জন্য শান্ত digital garden.
+</p>
+
+</div>
+
+</div>
+
 </section>
+
+
+<!-- COMMUNITY -->
 
 <section id="community">
-<div class="title"><h2>🫶 ARMY Community Corner</h2><p>একটা ছোট local message wall—browser-এ তোমার device-এ সংরক্ষিত হবে।</p></div>
+
+<div class="title">
+
+<h2>🫶 ARMY Community Corner</h2>
+
+<p>
+তোমার device-এ local message wall.
+</p>
+
+</div>
+
+
 <div class="card">
-<label>Your name</label><input id="msgName" maxlength="30" placeholder="Army name">
-<label>Your message</label><textarea id="msgText" maxlength="160" placeholder="একটা মিষ্টি message লিখো 💜"></textarea>
-<button class="btn" style="margin-top:12px" onclick="postMessage()">💌 Post Message</button>
+
+<label>Your name</label>
+
+<input
+id="msgName"
+maxlength="30"
+placeholder="Army name">
+
+
+<label>Your message</label>
+
+<textarea
+id="msgText"
+maxlength="160"
+placeholder="একটা মিষ্টি message লিখো 💜"></textarea>
+
+
+<button class="btn" style="margin-top:12px" onclick="postMessage()">
+💌 Post Message
+</button>
+
+
 <div id="chat" class="chat"></div>
-<p style="font-size:12px;color:#d8c8df">নোট: এই demo message wall real-time public chat নয়। সবাইকে একসাথে message দেখাতে হলে পরে free backend/database (যেমন Firebase) লাগবে।</p>
+
+
+<p style="font-size:12px;color:#d8c8df">
+
+নোট: এটি এখন local message wall।
+অন্য সবাইকে একই messages real-time দেখাতে হলে পরে
+একটি online database/backend যোগ করতে হবে।
+
+</p>
+
 </div>
+
 </section>
 
+
+<!-- TEAM -->
+
 <section>
-<div class="title"><h2>👑 Our Special Team</h2><p>Owner & Admin characters-এর আলাদা signature items থাকবে।</p></div>
+
+<div class="title">
+
+<h2>👑 Our Special Team</h2>
+
+<p>
+Owner & Admin characters-এর signature items.
+</p>
+
+</div>
+
+
 <div class="grid">
-<div class="card"><h3>💎 Owner Israt</h3><p>Signature: ✨ Purple Crown + Star Key</p></div>
-<div class="card"><h3>🌷 Admin Khushbu</h3><p>Signature: 🌙 Moon Pendant + Flower</p></div>
-<div class="card"><h3>🎀 Admin Tasnu</h3><p>Signature: 🎀 Dream Ribbon</p></div>
-<div class="card"><h3>🪻 Admin Mahi</h3><p>Signature: 🪻 Lavender Charm</p></div>
-<div class="card"><h3>🌸 Admin Oisika</h3><p>Signature: 🌸 Bloom Badge</p></div>
-<div class="card"><h3>⭐ Admin Jannat</h3><p>Signature: ⭐ Star Pin</p></div>
-<div class="card"><h3>🦋 Admin Nusaiba</h3><p>Signature: 🦋 Butterfly Charm</p></div>
+
+<div class="card">
+<h3>💎 Owner Israt</h3>
+<p>✨ Purple Crown + Star Key</p>
 </div>
+
+<div class="card">
+<h3>🌷 Admin Khushbu</h3>
+<p>🌙 Moon Pendant + Flower</p>
+</div>
+
+<div class="card">
+<h3>🎀 Admin Tasnu</h3>
+<p>🎀 Dream Ribbon</p>
+</div>
+
+<div class="card">
+<h3>🪻 Admin Mahi</h3>
+<p>🪻 Lavender Charm</p>
+</div>
+
+<div class="card">
+<h3>🌸 Admin Oisika</h3>
+<p>🌸 Bloom Badge</p>
+</div>
+
+<div class="card">
+<h3>⭐ Admin Jannat</h3>
+<p>⭐ Star Pin</p>
+</div>
+
+<div class="card">
+<h3>🦋 Admin Nusaiba</h3>
+<p>🦋 Butterfly Charm</p>
+</div>
+
+</div>
+
 </section>
 
+
+<!-- LIFE -->
+
 <section>
-<div class="title"><h2>🌈 Our Little Life</h2><p>এই জায়গাটা হবে হাসি, friendship, creativity আর respectful memories-এর জন্য।</p></div>
+
+<div class="title">
+
+<h2>🌈 Our Little Life</h2>
+
+<p>
+হাসি, friendship, creativity আর kindness-এর জায়গা।
+</p>
+
+</div>
+
+
 <div class="gallery">
-<div class="memory">🌸<br>Birthday Garden</div><div class="memory">💜<br>Army Friendship</div><div class="memory">🎉<br>Celebration Square</div><div class="memory">🌙<br>Quiet Night</div><div class="memory">🫶<br>Kindness Wall</div><div class="memory">✨<br>Dream Corner</div>
+
+<div class="memory">
+🌸<br>Birthday Garden
 </div>
+
+<div class="memory">
+💜<br>Army Friendship
+</div>
+
+<div class="memory">
+🎉<br>Celebration Square
+</div>
+
+<div class="memory">
+🌙<br>Quiet Night
+</div>
+
+<div class="memory">
+🫶<br>Kindness Wall
+</div>
+
+<div class="memory">
+✨<br>Dream Corner
+</div>
+
+</div>
+
 </section>
+
+
+<!-- WHATSAPP -->
 
 <section>
+
 <div class="card" style="text-align:center">
+
 <h2>💜 Join Army Girls Club</h2>
-<p>Website-এর dream world থেকে আমাদের WhatsApp family-তে চলে আসো।</p>
-<a class="btn" target="_blank" href="https://chat.whatsapp.com/FzQQnYNPE524TjXa7cqybD?s=cl&p=a&mlu=4&ilr=4">🌷 Join WhatsApp Group</a>
+
+<p>
+Purple Dream World থেকে আমাদের WhatsApp family-তে চলে আসো।
+</p>
+
+<a
+class="btn"
+target="_blank"
+href="https://chat.whatsapp.com/FzQQnYNPE524TjXa7cqybD?s=cl&p=a&mlu=4&ilr=4">
+
+🌷 Join WhatsApp Group
+
+</a>
+
 </div>
+
 </section>
 
-<footer>★ Army Forever • BTS Lovers ♡ ★<br>Made with 💜 for Army Girls Club</footer>
+
+<!-- MODAL -->
+
+<div id="roomModal" class="modal" onclick="closeRoom(event)">
+
+<div class="modalBox">
+
+<button class="modalClose" onclick="closeRoom()">
+×
+</button>
+
+<h2 id="modalTitle"></h2>
+
+<p id="modalText"></p>
+
+<div style="font-size:55px;text-align:center;margin:25px 0">
+💜 ✨ 🌙 ✨ 💜
+</div>
+
+<button class="btn" onclick="petalRain(25)">
+🌸 Release Flowers
+</button>
+
+</div>
+
+</div>
+
+
+<!-- FLOAT TOOLS -->
+
+<div class="tools">
+
+<button class="toolBtn" onclick="showGuide()" title="Guide">
+💜
+</button>
+
+<button class="toolBtn" onclick="toggleTheme()" title="Theme">
+🌙
+</button>
+
+<button class="toolBtn" onclick="petalRain(20)" title="Flowers">
+🌸
+</button>
+
+</div>
+
+
+<footer>
+
+★ Army Forever • BTS Lovers ♡ ★
+
+<br>
+
+Made with 💜 for Army Girls Club
+
+<br><br>
+
+<span style="font-size:12px">
+Purple Dream World • Version 2
+</span>
+
+</footer>
+
 
 <script>
-function petalRain(n=24){for(let i=0;i<n;i++){let p=document.createElement('div');p.className='petal';p.textContent=['🌸','🌷','💜','✨','🌺'][Math.floor(Math.random()*5)];p.style.left=Math.random()*100+'vw';p.style.fontSize=(14+Math.random()*18)+'px';p.style.animationDuration=(4+Math.random()*5)+'s';p.style.animationDelay=(Math.random()*1.2)+'s';document.body.appendChild(p);setTimeout(()=>p.remove(),10000)}}
-function showGuide(){document.getElementById('guide').classList.add('show');petalRain(18)}
-function hideGuide(){document.getElementById('guide').classList.remove('show')}
-function welcomeMe(){let n=document.getElementById('visitorName').value.trim();if(!n){alert('আগে তোমার নাম লিখো, Army Girl! 🌷');return}document.getElementById('welcomeTitle').textContent='Welcome, '+n+' ♡';document.getElementById('welcomeCard').style.display='block';petalRain(35);document.getElementById('welcomeCard').scrollIntoView({behavior:'smooth',block:'center'})}
-function createCharacter(){let n=document.getElementById('charName').value.trim()||'My ARMY';let b=document.getElementById('bias').value;let g=document.getElementById('gender').value;let c=document.getElementById('outfit').value;let item=document.getElementById('item').value;document.getElementById('body').style.background=c;document.getElementById('badge').textContent=item;document.getElementById('crown').style.display=(g.includes('Prince')||g.includes('Princess'))?'block':'none';document.getElementById('characterResult').textContent=n+' • '+g+' • Bias: '+b+' ✨';petalRain(20)}
-function room(name){alert(name+' room opened! ✨\\nএটা visual demo। পরে এই room-এ আরও animations, images ও official media embeds যোগ করা যাবে।')}
-function postMessage(){let n=document.getElementById('msgName').value.trim()||'Army';let t=document.getElementById('msgText').value.trim();if(!t)return;let box=document.getElementById('chat');let div=document.createElement('div');div.className='msg';div.innerHTML='<b>'+escapeHtml(n)+'</b> 💜<br>'+escapeHtml(t);box.prepend(div);let arr=JSON.parse(localStorage.getItem('agcMessages')||'[]');arr.unshift({n,t});localStorage.setItem('agcMessages',JSON.stringify(arr.slice(0,30)));document.getElementById('msgText').value=''}
-function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
-function loadMessages(){let box=document.getElementById('chat');JSON.parse(localStorage.getItem('agcMessages')||'[]').forEach(x=>{let d=document.createElement('div');d.className='msg';d.innerHTML='<b>'+escapeHtml(x.n)+'</b> 💜<br>'+escapeHtml(x.t);box.appendChild(d)})}
-loadMessages();setTimeout(showGuide,900);setTimeout(()=>petalRain(30),700);
+
+/* MOBILE MENU */
+
+function toggleMenu(){
+
+  document.getElementById("nav").classList.toggle("open");
+
+}
+
+function closeMenu(){
+
+  document.getElementById("nav").classList.remove("open");
+
+}
+
+
+/* GUIDE */
+
+function showGuide(){
+
+  document.getElementById("guide").classList.add("show");
+
+  petalRain(15);
+
+}
+
+function hideGuide(){
+
+  document.getElementById("guide").classList.remove("show");
+
+}
+
+
+/* PETAL RAIN */
+
+function petalRain(n=24){
+
+  const items=["🌸","🌷","💜","✨","🌺"];
+
+  for(let i=0;i<n;i++){
+
+    let p=document.createElement("div");
+
+    p.className="petal";
+
+    p.textContent=items[Math.floor(Math.random()*items.length)];
+
+    p.style.left=Math.random()*100+"vw";
+
+    p.style.fontSize=(14+Math.random()*18)+"px";
+
+    p.style.animationDuration=(4+Math.random()*5)+"s";
+
+    p.style.animationDelay=(Math.random()*1.2)+"s";
+
+    document.body.appendChild(p);
+
+    setTimeout(()=>p.remove(),10000);
+
+  }
+
+}
+
+
+/* WELCOME */
+
+function welcomeMe(){
+
+  let n=document
+    .getElementById("visitorName")
+    .value
+    .trim();
+
+  if(!n){
+
+    alert("আগে তোমার নাম লিখো, Army Girl! 🌷");
+
+    return;
+
+  }
+
+  document.getElementById("welcomeTitle")
+    .textContent="Welcome, "+n+" ♡";
+
+  const moods=[
+    "💜 Purple Dreamer",
+    "🌸 Flower ARMY",
+    "🌙 Moonlight ARMY",
+    "✨ Starry ARMY",
+    "🫶 Kindness ARMY"
+  ];
+
+  document.getElementById("welcomeMood")
+    .textContent=
+    moods[Math.floor(Math.random()*moods.length)];
+
+  document.getElementById("welcomeCard")
+    .style.display="block";
+
+  localStorage.setItem("agcVisitor",n);
+
+  petalRain(35);
+
+  document.getElementById("welcomeCard")
+    .scrollIntoView({
+      behavior:"smooth",
+      block:"center"
+    });
+
+}
+
+
+/* CHARACTER */
+
+function createCharacter(){
+
+  let n=document
+    .getElementById("charName")
+    .value
+    .trim() || "My ARMY";
+
+  let b=document
+    .getElementById("bias")
+    .value;
+
+  let g=document
+    .getElementById("gender")
+    .value;
+
+  let c=document
+    .getElementById("outfit")
+    .value;
+
+  let item=document
+    .getElementById("item")
+    .value;
+
+  let hairStyle=document
+    .getElementById("hairStyle")
+    .value;
+
+
+  document.getElementById("body")
+    .style.background=c;
+
+  document.getElementById("badge")
+    .textContent=item;
+
+
+  document.getElementById("crown")
+    .style.display=
+      (g.includes("Prince") ||
+       g.includes("Princess"))
+      ?"block"
+      :"none";
+
+
+  const hair=document.getElementById("hair");
+
+
+  if(hairStyle==="short"){
+
+    hair.style.height="75px";
+    hair.style.borderRadius="55px 55px 25px 25px";
+
+  }
+
+  else if(hairStyle==="curly"){
+
+    hair.style.height="115px";
+    hair.style.borderRadius="45% 55% 50% 40%";
+
+  }
+
+  else{
+
+    hair.style.height="118px";
+    hair.style.borderRadius="60px 60px 38px 38px";
+
+  }
+
+
+  document.getElementById("characterResult")
+    .textContent=
+      n+" • "+g+" • Bias: "+b+" ✨";
+
+
+  localStorage.setItem(
+    "agcCharacter",
+    JSON.stringify({
+      n:n,
+      b:b,
+      g:g,
+      c:c,
+      item:item,
+      hair:hairStyle
+    })
+  );
+
+
+  document.getElementById("saveStatus")
+    .textContent=
+      "💾 Character saved on this device!";
+
+
+  petalRain(20);
+
+}
+
+
+/* LOAD CHARACTER */
+
+function loadCharacter(){
+
+  let data=localStorage.getItem("agcCharacter");
+
+  if(!data){
+
+    alert("এখনও কোনো character save করা হয়নি। 💜");
+
+    return;
+
+  }
+
+  let x=JSON.parse(data);
+
+
+  document.getElementById("charName").value=x.n;
+
+  document.getElementById("bias").value=x.b;
+
+  document.getElementById("gender").value=x.g;
+
+  document.getElementById("outfit").value=x.c;
+
+  document.getElementById("item").value=x.item;
+
+  document.getElementById("hairStyle").value=x.hair;
+
+
+  createCharacter();
+
+}
+
+
+/* SONG ROOM */
+
+function openRoom(title,text){
+
+  document.getElementById("modalTitle")
+    .textContent=title;
+
+  document.getElementById("modalText")
+    .textContent=text;
+
+  document.getElementById("roomModal")
+    .classList.add("show");
+
+  petalRain(10);
+
+}
+
+
+function closeRoom(e){
+
+  if(
+    e &&
+    e.target &&
+    e.target.id!=="roomModal"
+  ) return;
+
+  document.getElementById("roomModal")
+    .classList.remove("show");
+
+}
+
+
+/* COMMUNITY */
+
+function escapeHtml(s){
+
+  return s.replace(
+    /[&<>"']/g,
+    c=>({
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#039;"
+    }[c])
+  );
+
+}
+
+
+function postMessage(){
+
+  let n=document
+    .getElementById("msgName")
+    .value
+    .trim() || "Army";
+
+  let t=document
+    .getElementById("msgText")
+    .value
+    .trim();
+
+  if(!t){
+
+    alert("আগে একটা message লিখো 💜");
+
+    return;
+
+  }
+
+
+  let arr=JSON.parse(
+    localStorage.getItem("agcMessages") || "[]"
+  );
+
+
+  arr.unshift({
+    n:n,
+    t:t
+  });
+
+
+  localStorage.setItem(
+    "agcMessages",
+    JSON.stringify(arr.slice(0,30))
+  );
+
+
+  document.getElementById("msgText")
+    .value="";
+
+
+  renderMessages();
+
+}
+
+
+function renderMessages(){
+
+  let box=document.getElementById("chat");
+
+  box.innerHTML="";
+
+
+  let arr=JSON.parse(
+    localStorage.getItem("agcMessages") || "[]"
+  );
+
+
+  arr.forEach(x=>{
+
+    let d=document.createElement("div");
+
+    d.className="msg";
+
+    d.innerHTML=
+      "<b>"+
+      escapeHtml(x.n)+
+      "</b> 💜<br>"+
+      escapeHtml(x.t);
+
+    box.appendChild(d);
+
+  });
+
+}
+
+
+/* THEME */
+
+function toggleTheme(){
+
+  document.body.classList.toggle("light");
+
+  localStorage.setItem(
+    "agcTheme",
+    document.body.classList.contains("light")
+      ?"light"
+      :"dark"
+  );
+
+}
+
+
+/* LOAD SAVED DATA */
+
+function loadSavedData(){
+
+  const visitor=
+    localStorage.getItem("agcVisitor");
+
+  if(visitor){
+
+    document.getElementById("visitorName")
+      .value=visitor;
+
+  }
+
+
+  const theme=
+    localStorage.getItem("agcTheme");
+
+  if(theme==="light"){
+
+    document.body.classList.add("light");
+
+  }
+
+
+  renderMessages();
+
+}
+
+
+/* START */
+
+loadSavedData();
+
+setTimeout(showGuide,1200);
+
+setTimeout(()=>{
+  petalRain(25);
+},700);
+
 </script>
+
 </body>
-  </html>
+</html>
